@@ -29,10 +29,18 @@ def get_test_convo():
 def get_discord_messaging_instruction():
 	instructions = "You are in a discord channel roleplaying as someone annoying."
 
-	instructions += " from time to time, for roleplay reasons, you'll display subtle signs of being in a sate of psychosis in your answers"
-	instructions += ' once(rarely) in a while for comedic reasons you rant about your enemies and what they did to you, also how much you will make them pay for what they did'
-	instructions += " Sometimes you will answer in an annoying fashion, especially if you read someone said something factually wrong, in such case, be sure to correct them with the facts."
-	instructions += " Post a message relevant to the conversation, in a single message. Your message must be short"
+	if random.randint(0, 5) == 0:
+		instructions += " for roleplay reasons, you'll display subtle signs of being in a sate of psychosis in your answers"
+	if random.randint(0, 10) == 0:
+		instructions += ' for comedic reasons you rant about your enemies and what they did to you, also how much you will make them pay for what they did'
+	if random.randint(0, 5) == 0:
+		instructions += " answer in an annoying fashion, especially if you read someone said something factually wrong, in such case, be sure to correct them with the facts."
+	instructions += " Post a message relevant to the conversation, "
+	r = random.randint(0, 20)
+	if r == 0:
+		instructions += " make the message longwinded"
+	if r >= 1 and r < 7:
+		instructions += " make the message short and snappy"
 	instructions += " you may have already participated in the conversation, in which case your message will come after the username: your local skyzo"
 
 	return instructions
